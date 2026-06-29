@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>503 Service Unavailable • Kostkowe Radio</title>
+  <style>
+    :root{
+      --bg1:#070812;
+      --bg2:#0b0f25;
+      --accent:#7c3aed;
+      --accent2:#22c55e;
+      --text:#eef2ff;
+      --muted:#aab0d6;
+    }
+
+    *{box-sizing:border-box}
+
+    body{
+      margin:0;
+      height:100vh;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-family:system-ui,Segoe UI,Arial;
+      color:var(--text);
+      background: radial-gradient(circle at 20% 20%, #1b1f3a 0%, transparent 40%),
+                  radial-gradient(circle at 80% 30%, #2a145f 0%, transparent 45%),
+                  linear-gradient(160deg,var(--bg1),var(--bg2));
+      overflow:hidden;
+    }
+
+    /* animated glow blobs */
+    .blob{
+      position:absolute;
+      width:500px;
+      height:500px;
+      filter:blur(120px);
+      opacity:0.35;
+      animation:float 10s infinite ease-in-out;
+    }
+
+    .b1{background:var(--accent); top:-100px; left:-120px;}
+    .b2{background:var(--accent2); bottom:-120px; right:-100px; animation-delay:2s;}
+
+    @keyframes float{
+      0%,100%{transform:translateY(0)}
+      50%{transform:translateY(40px)}
+    }
+
+    .card{
+      position:relative;
+      width:min(720px,92%);
+      padding:40px;
+      border-radius:28px;
+      background:rgba(255,255,255,0.05);
+      border:1px solid rgba(255,255,255,0.12);
+      backdrop-filter:blur(20px);
+      box-shadow:0 20px 80px rgba(0,0,0,0.6);
+      text-align:center;
+    }
+
+    .icon{
+      font-size:50px;
+      animation:pulse 2s infinite;
+    }
+
+    @keyframes pulse{
+      0%,100%{transform:scale(1)}
+      50%{transform:scale(1.15)}
+    }
+
+    .code{
+      font-size:110px;
+      font-weight:800;
+      margin:10px 0;
+      background:linear-gradient(90deg,#fff,#a78bfa,#22c55e);
+      -webkit-background-clip:text;
+      color:transparent;
+      letter-spacing:-5px;
+    }
+
+    h1{
+      margin:0;
+      font-size:34px;
+    }
+
+    p{
+      color:var(--muted);
+      margin-top:10px;
+      line-height:1.6;
+    }
+
+    .dots::after{
+      content:'';
+      animation:dots 1.5s infinite;
+    }
+
+    @keyframes dots{
+      0%{content:''}
+      33%{content:'.'}
+      66%{content:'..'}
+      100%{content:'...'}
+    }
+
+    .buttons{
+      margin-top:25px;
+      display:flex;
+      gap:12px;
+      justify-content:center;
+      flex-wrap:wrap;
+    }
+
+    .btn{
+      padding:12px 18px;
+      border-radius:14px;
+      text-decoration:none;
+      font-weight:600;
+      transition:0.2s;
+    }
+
+    .primary{
+      background:linear-gradient(135deg,var(--accent),#4f46e5);
+      color:white;
+      box-shadow:0 10px 30px rgba(124,58,237,0.4);
+    }
+
+    .secondary{
+      border:1px solid rgba(255,255,255,0.2);
+      color:var(--text);
+      background:rgba(255,255,255,0.05);
+    }
+
+    .btn:hover{
+      transform:translateY(-3px);
+    }
+
+    .waves{
+      margin-top:25px;
+      height:40px;
+      display:flex;
+      gap:4px;
+      justify-content:center;
+      align-items:flex-end;
+    }
+
+    .bar{
+      width:6px;
+      height:10px;
+      background:var(--accent);
+      animation:wave 1s infinite ease-in-out;
+      border-radius:4px;
+    }
+
+    .bar:nth-child(2){animation-delay:0.1s}
+    .bar:nth-child(3){animation-delay:0.2s}
+    .bar:nth-child(4){animation-delay:0.3s}
+    .bar:nth-child(5){animation-delay:0.4s}
+
+    @keyframes wave{
+      0%,100%{height:10px}
+      50%{height:35px}
+    }
+
+    .footer{
+      margin-top:20px;
+      font-size:12px;
+      color:#7d84b3;
+    }
+  </style>
+</head>
+<body>
+
+<div class="blob b1"></div>
+<div class="blob b2"></div>
+
+<div class="card">
+  <div class="icon">📻</div>
+  <div class="code">503</div>
+  <h1>Service Unavailable</h1>
+  <p>
+    No server is available to handle this request.<br>
+    System Kostkowe Radio is restarting<span class="dots"></span>
+  </p>
+
+  <div class="waves">
+    <div class="bar"></div>
+    <div class="bar"></div>
+    <div class="bar"></div>
+    <div class="bar"></div>
+    <div class="bar"></div>
+  </div>
+
+  <div class="buttons">
+    <a class="btn primary" href="javascript:location.reload()">Odśwież</a>
+    <a class="btn secondary" href="/">Strona główna</a>
+  </div>
+
+  <div class="footer">
+    Trwa przywracanie usług audio...
+  </div>
+</div>
+
+</body>
+</html>
