@@ -125,7 +125,7 @@ body {
   position: relative;
   min-height: calc(100vh - var(--nav-h));
   background:
-    url('https://kostkoweradio.github.io/strona-glowna/0yg11h.jpg')
+    url('https://kostkoweradio.github.io/0yg11h.jpg')
     center/cover no-repeat;
   background-color: var(--surface);
   display: flex;
