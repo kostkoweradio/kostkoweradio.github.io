@@ -95,7 +95,7 @@
     els.recoText.textContent =
       'Wykryliśmy, że Twoje urządzenie może nie spełniać wymagań tej wersji. Zalecamy v' +
       fallback.version + ' (' + formatDatePL(fallback.date) + ').';
-    els.recoBtn.href = '/pobierz-kostkowe-radio.html?date=' + fallback.date;
+    els.recoBtn.href = '/pobierz-kostkowe-radio/?date=' + fallback.date;
   }
 
   function showNotice(text) {
