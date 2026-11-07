@@ -1,5 +1,17 @@
 [
   {
+    "version": "17.7",
+    "date": "2026-10-31",
+    "size": "36.93MB",
+    "ramMinGB": 1.0,
+    "ramLabel": "1.0GB+",
+    "androidMin": 7.0,
+    "androidLabel": "7.0+",
+    "note": "Aktualizuj na bieżąco, w przeciwnym razie aplikacja stanie się niestabilna.",
+    "changelog": "Halloweenowy wygląd aplikacji i poprawki działania.",
+    "downloadUrl": "https://download.kostkoweradio.pages.dev/kostkowe-radio_v17.7.apk"
+  },
+  {
     "version": "17.1",
     "date": "2026-08-25",
     "size": "36.64MB",
